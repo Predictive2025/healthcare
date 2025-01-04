@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views import View
+
+from Predictiveapp.form import DoctorForm, Postform, medicinemodelform, prescriptionmodelform, servicetableform
 
 # Create your views here.
 
@@ -18,6 +20,12 @@ class AppointmentAdmin(View):
 class Doctor(View):
     def get(self,request):
         return render(request,'Administrator/doctors.html')
+    def DoctorForm(self,request):
+        form=DoctorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('AdminDash')
+
     
 class Patient(View):
     def get(self,request):
@@ -26,6 +34,12 @@ class Patient(View):
 class Service(View):
     def get(self,request):
         return render(request,'Administrator/service.html')
+    def servicetableform(self,request):
+        form=servicetableform(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('AdminDash')
+
     
 
 # //////////////////////////////////////////////////Doctor ///////////////////////////////////
@@ -38,6 +52,12 @@ class DoctorDash(View):
 class AddPost(View):
     def get(self,request):
         return render(request,'Doctor/addpost.html')
+    def post(self,request):
+        form=Postform(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('DoctorDash')
+
     
 class DoctorAppointment(View):
     def get(self,request):
@@ -46,6 +66,12 @@ class DoctorAppointment(View):
 class ManagePrescription(View):
     def get(self,request):
         return render(request,'Doctor/managepriscdr.html')
+    def post(self,request):
+        form=prescriptionmodelform(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('DoctorDash')
+
     
 class Notification(View):
     def get(self,request):
@@ -60,6 +86,12 @@ class PharmacistDash(View):
 class AddMedicine(View):
     def get(self,request):
         return render(request,'Pharmacist/addmedicineph.html')
+    def medicinemodelform(self,request):
+        form=medicinemodelform(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('PharmacistDash')
+            
 
 class UserRequest(View):
     def get(self,request):

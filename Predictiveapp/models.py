@@ -19,7 +19,7 @@ class Doctor(models.Model):
 
 #///////////notification/////////////////////
 class Notification(models.Model):
-    message= models.CharField(max_length=100, null=True,blank=True)
+    notmessage= models.CharField(max_length=100, null=True,blank=True)
     date = models.DateField(null=True,blank=True)
     time = models.TimeField(null=True,blank=True)
 
@@ -37,7 +37,7 @@ class pharmacistmodel(models.Model):
     name = models.CharField(max_length=100, null=True,blank=True)
     age  = models.IntegerField(null =True,blank=True)
     shopname = models.CharField(max_length=100,null = True,blank=True)
-    cerfificate = models.FileField(upload_to='certificate/',null = True,blank=True)
+    certificate = models.FileField(upload_to='certificate/',null = True,blank=True)
     phoneno = models.IntegerField(null = True,blank=True)
 
 
@@ -45,7 +45,7 @@ class pharmacistmodel(models.Model):
 #//////////////////request///////////////////////
 class Request(models.Model):
     PHARMACIST = models.ForeignKey(pharmacistmodel, on_delete=models.CASCADE, null=True, blank=True)
-    Request= models.FileField(upload_to='presc/', null=True,blank=True)
+    request= models.FileField(upload_to='presc/', null=True,blank=True)
     status= models.CharField(max_length=100, null=True,blank=True)
     date= models.DateField(null=True,blank=True)
     time= models.TimeField(null=True,blank=True)
