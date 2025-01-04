@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-image: url('https://img.freepik.com/free-vector/flat-hand-drawn-hospital-reception-scene_52683-54613.jpg?t=st=1732945998~exp=1732949598~hmac=3c3463eaddb9b0bce11871e46c62930210a4c03d19dc6a360a050014fb5e3ff2&w=900');
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+
+.card {
+    background-color: rgba(173, 216, 230, 0.653);
+    padding: 80px;
+    border-radius: 20px;
+    box-shadow: 10px 20px 30px black;
+}
+
+table {
+    font-size: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 2px solid black;
+    padding: 10px;
+
+}
+
+button {
+    margin-left: 100px;
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 8px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}

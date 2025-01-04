@@ -1,0 +1,32 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-image: url(https://img.freepik.com/free-photo/medicine-blue-background-flat-lay_23-2149341573.jpg?semt=ais_hybrid);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(6px);
+}
+.card{
+    background-image:linear-gradient(rgba(0, 242, 165, 0.489), rgba(243, 49, 207, 0.386));
+    padding: 80px;
+    border-radius: 20px;
+    box-shadow: 10px 20px 30PX BLACK;
+}
+table {
+    font-size: 20px;
+    border-collapse: collapse;
+}
+
+th,td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.head{
+    position: absolute;
+    top: 200px;
+}

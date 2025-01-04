@@ -1,0 +1,47 @@
+body{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(https://img.freepik.com/free-photo/copy-space-medical-desk-with-stethoscope_23-2148519746.jpg?t=st=1734150495~exp=1734154095~hmac=087902fda060293bf11b3e3f0d156fb11eae6d1ebb6333646089667ac46c2406&w=740);
+    background-repeat:no-repeat ;
+    background-size: cover;
+    backdrop-filter: blur(6px);
+}
+table{
+    font-size: 20px;
+    border-collapse: collapse;
+}
+th,td{
+    border: 1px solid black;
+    padding: 10px;
+}
+.card{
+    align-items: center;
+    background-image:linear-gradient(rgba(0, 242, 165, 0.489), rgba(243, 49, 207, 0.386));
+    padding: 60px;  
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 10px 20px 30PX BLACK;
+    position: inherit;
+}
+.add{
+    position: absolute;
+    bottom: 620px;
+    right: 50px;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 6px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.add:hover{
+    background-color: rgb(112, 111, 111);
+}
+.inline a{
+    display: inline-block;
+}

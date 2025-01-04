@@ -1,13 +1,22 @@
+from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from django.views import View
 
 from Predictiveapp.form import DoctorForm, Postform, medicinemodelform, prescriptionmodelform, servicetableform
+from .models import *
 
 # Create your views here.
 
 class Login(View):
     def get(self,request):
         return render(request,'mainloginpage.html')
+    def post(self, request):
+        username = request.POST['username']
+        password = request.POST['password']
+        login_obj = Loginmodel.objects.get(username=username, password=password) 
+        if login_obj.type =="admin":
+            return HttpResponse('''<script>alert("welcome to a");window.location="/admindash"</script>''')
+    
     
 class AdminDash(View):
     def get(self,request):
@@ -20,7 +29,7 @@ class AppointmentAdmin(View):
 class Doctor(View):
     def get(self,request):
         return render(request,'Administrator/doctors.html')
-    def DoctorForm(self,request):
+    def post(self,request):
         form=DoctorForm(request.POST)
         if form.is_valid():
             form.save()
@@ -34,7 +43,7 @@ class Patient(View):
 class Service(View):
     def get(self,request):
         return render(request,'Administrator/service.html')
-    def servicetableform(self,request):
+    def post(self,request):
         form=servicetableform(request.POST)
         if form.is_valid():
             form.save()
