@@ -12,13 +12,23 @@
 <body>
     <table border="2px">
         <tr>
-<th> NAME </th>
-<th>DETAILS</th>
+            <th> Name </th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Phoneno</th>
+            <th>Date</th>
+            <th>Email</th>
         </tr>
+        {% for i in obj %}
         <tr>
-            <td>  </td>
-            <td>  </td>
+            <td>{{i.name}}  </td>
+            <td>{{i.age}}  </td>
+            <td>{{i.address}}  </td>
+            <td>{{i.phoneno}}  </td>
+            <td> {{i.date}} </td>
+            <td> {{i.email}} </td>
         </tr>
+        {% endfor %}
     </table>
 
     

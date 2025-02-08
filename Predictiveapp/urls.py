@@ -5,7 +5,7 @@ from django.urls import include, path
 from .views import *
 
 urlpatterns = [
-    path('login', Login.as_view(),name='login'),
+    path('', Login.as_view(),name='login'),
     path('admindash', AdminDash.as_view(),name='admindash'),
     path('appointmentadmin',AppointmentAdmin.as_view(),name='appointmentadmin'),
     path('doctor',Doctor.as_view(),name='doctor'),
@@ -15,6 +15,7 @@ urlpatterns = [
    
     path('doctordash',DoctorDash.as_view(),name='doctordash'),    
     path('addpost',AddPost.as_view(),name='addpost'),    
+    path('adddoctor',Adddoctor.as_view(),name='adddoctor'),
     path('doctorappointment',DoctorAppointment.as_view(),name='doctorappointment'),   
     path('manageprescription',ManagePrescription.as_view(),name='manageprescription'),  
     path('notification',Notification.as_view(),name='notification'),

@@ -28,7 +28,8 @@ class AppointmentAdmin(View):
     
 class Doctor(View):
     def get(self,request):
-        return render(request,'Administrator/doctors.html')
+        obj = DoctorTable.objects.all()
+        return render(request,'Administrator/doctors.html', {'obj':obj})
     def post(self,request):
         form=DoctorForm(request.POST)
         if form.is_valid():
@@ -38,7 +39,8 @@ class Doctor(View):
     
 class Patient(View):
     def get(self,request):
-        return render(request,'Administrator/patient.html')
+        obj = patientmodel.objects.all()
+        return render(request,'Administrator/patient.html',{'obj':obj})
     
 class Service(View):
     def get(self,request):
@@ -66,7 +68,18 @@ class AddPost(View):
         if form.is_valid():
             form.save()
             return redirect('DoctorDash')
-
+        
+class Adddoctor(View):
+    def get(self,request):
+        return render(request,'Administrator/adddoctors.html')
+    def post(self,request):
+        form=DoctorForm(request.POST)
+        if form.is_valid():
+           
+            f=form.save(commit=False)
+            f.LOGINID=Loginmodel.objects.create(username=request.POST['username'],password=request.POST['password'], type='doctor')
+            f.save()
+            return redirect('admindash')
     
 class DoctorAppointment(View):
     def get(self,request):
@@ -106,3 +119,6 @@ class UserRequest(View):
     def get(self,request):
         return render(request,'Pharmacist/userrequest.html')
       
+
+    
+          

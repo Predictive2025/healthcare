@@ -12,27 +12,33 @@
 </head>
 <body>
     <h1 class="head">Doctor table <h1>
+        <a href="adddoctor"><i class="material-icons">add</i></a>
     <table >
         <tr>
             <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
             <th>Department</th>
+            <th>email</th>
             <th>Qualification</th>
-            <th>Hospital</th>
-            <th>Time</th>
-            <th>Availability</th>
+            <th>Phoneno</th>
             <th>Action</th>
         </tr>
+        {% for i in obj %}
         <tr>
-            <td>  </td>
-            <td>  </td>
-            <td>  </td>
-            <td>  </td>
-            <td>  </td>
-            <td>  </td>
+            <td>{{ i.name }}</td>
+            <td>{{i.age}}  </td>
+            <td>{{i.gender}}  </td>
+            <td>{{i.department}} </td>
+            <td> {{i.email}} </td>
+            <td> {{i.qualification}} </td>
+            <td>{{i.phoneno}}</td>
             <td>
                 <a href="#"><i class="material-icons">edit</i></a>
                 <a href="#"><i class="material-icons">delete</i></a>
             </td>
+
         </tr>
+        {% endfor %}
 </body>
 </html>

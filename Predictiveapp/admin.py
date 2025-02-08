@@ -5,7 +5,7 @@ from .models import *
 # Register your models here.
 
 admin.site.register(Loginmodel)
-admin.site.register(Doctor)
+admin.site.register(DoctorTable)
 admin.site.register(Notification)
 admin.site.register(pharmacistmodel)
 admin.site.register(appointmentmodel)

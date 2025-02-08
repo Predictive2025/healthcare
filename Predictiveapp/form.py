@@ -10,7 +10,7 @@ class Notificationform(ModelForm):
 
 class DoctorForm(ModelForm):
     class Meta:
-        model = Doctor
+        model = DoctorTable
         fields = ['name','age','gender','department', 'email', 'phoneno', 'qualification']
 
 class Postform(ModelForm):

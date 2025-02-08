@@ -7,7 +7,7 @@ class Loginmodel(models.Model):
     type =models.CharField(max_length=100, null=True,blank=True)
 
     #//////////doctortable//////////#
-class Doctor(models.Model):
+class DoctorTable(models.Model):
     LOGINID = models.ForeignKey(Loginmodel,on_delete=models.CASCADE,null=True,blank=True)
     name = models.CharField(max_length=100, null=True,blank=True)
     age = models.IntegerField(null=True,blank=True)
@@ -25,7 +25,7 @@ class Notification(models.Model):
 
 #//////////post////////////////////
 class Post(models.Model):
-    DOCTOR = models.ForeignKey(Doctor, on_delete=models.CASCADE, null=True, blank=True)
+    DOCTOR = models.ForeignKey(DoctorTable, on_delete=models.CASCADE, null=True, blank=True)
     posts= models.FileField(upload_to='post/', null=True,blank=True)
     caption= models.CharField(max_length=100, null=True,blank=True)
     date= models.DateField(null=True,blank=True)
@@ -52,7 +52,7 @@ class Request(models.Model):
     
 #//////////////appointment////////////////////
 class appointmentmodel(models.Model): 
-    DRID = models.ForeignKey(Doctor,on_delete=models.CASCADE,null =True,blank=True)
+    DRID = models.ForeignKey(DoctorTable,on_delete=models.CASCADE,null =True,blank=True)
     name = models.CharField(max_length=100,null = True,blank=True)
     age = models.IntegerField(null = True,blank=True)
     time = models.CharField(max_length=100,null = True,blank=True)
@@ -75,7 +75,7 @@ class patientmodel(models.Model):
 #////////////////////prescription/////////////////
 class prescriptionmodel(models.Model): 
     USERID = models.ForeignKey(patientmodel,on_delete=models.CASCADE,null =True,blank=True)
-    DRID = models.ForeignKey(Doctor,on_delete=models.CASCADE,null =True,blank=True)
+    DRID = models.ForeignKey(DoctorTable,on_delete=models.CASCADE,null =True,blank=True)
     name= models.CharField(max_length=100,null = True,blank=True)
     age = models.IntegerField(null = True,blank=True)
     date = models.DateField(auto_now_add=True,null = True,blank=True)
